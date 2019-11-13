@@ -13,12 +13,13 @@ const Wrapper = styled.div<{ selected: boolean }>`
   border-bottom: 2px solid rgb(31, 44, 73);
 `;
 
-export const NavItem: React.FC<{ Icon: any; selected: boolean }> = ({
-  Icon,
-  selected,
-}) => {
+export const NavItem: React.FC<{
+  Icon: any;
+  selected: boolean;
+  onClick: () => void;
+}> = ({ Icon, selected, onClick }) => {
   return (
-    <Wrapper selected={selected}>
+    <Wrapper selected={selected} onClick={onClick}>
       <Icon size={24} color="rgb(162,233,242)" />
     </Wrapper>
   );
