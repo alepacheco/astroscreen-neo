@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { LeftNavigation } from './LeftNavigation';
 
 const InterfaceWrapper = styled.div`
   width: 100%;
@@ -17,17 +18,11 @@ const RowWrapper = styled.div`
 
 const TopNavigation = styled.div`
   display: flex;
+
   height: 64px;
   background-color: rgb(31, 44, 73);
   width: 100%;
   flex: 0 1 auto;
-`;
-
-const LeftNavigation = styled.div`
-  height: 100%;
-  width: 80px;
-  background-color: rgb(31, 44, 73);
-  border-top: 1.5px solid rgb(6, 22, 54);
 `;
 
 const ChildrenWrapper = styled.div`
@@ -37,9 +32,13 @@ const ChildrenWrapper = styled.div`
 `;
 
 const LogoWrapper = styled.div`
+  text-align: center;
   margin: auto;
 `;
 const LogoBox = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 80px;
   border-right: 1.5px solid rgb(6, 22, 54);
 `;
@@ -62,7 +61,7 @@ export const Interface: React.FC<{}> = ({ children }) => {
         <TitleWrapper>Events from: Coca Cola Company</TitleWrapper>
       </TopNavigation>
       <RowWrapper>
-        <LeftNavigation>left here</LeftNavigation>
+        <LeftNavigation />
         <ChildrenWrapper>{children}</ChildrenWrapper>
       </RowWrapper>
     </InterfaceWrapper>
