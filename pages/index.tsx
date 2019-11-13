@@ -1,16 +1,15 @@
 import '../css/index.scss';
-import HelloWorld from '../components/HelloWorld';
-
+import { Interface } from '../components/Interface';
+import { Table } from '../components/Table';
 const Index = () => {
   return (
     <div className="page">
-      <HelloWorld />
+      <Interface>
+        <Table />
+      </Interface>
 
       <style jsx>{`
         .page {
-          margin-top: 10vh;
-          font-family: monospace;
-          text-align: center;
         }
       `}</style>
     </div>
