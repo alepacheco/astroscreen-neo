@@ -2,7 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import { NavItem } from './NavItem';
 
-import { FaRegStar } from 'react-icons/fa';
+import {
+  FaRegStar,
+  FaSlackHash,
+  FaWaveSquare,
+  FaFileAlt,
+  FaArchive,
+} from 'react-icons/fa';
 
 const Wrapper = styled.div`
   height: 100%;
@@ -18,10 +24,10 @@ export const LeftNavigation = () => {
   return (
     <Wrapper>
       <NavItem Icon={FaRegStar} selected={true} />
-      <NavItem Icon={FaRegStar} selected={false} />
-      <NavItem Icon={FaRegStar} selected={false} />
-      <NavItem Icon={FaRegStar} selected={false} />
-      <NavItem Icon={FaRegStar} selected={false} />
+      <NavItem Icon={FaSlackHash} selected={false} />
+      <NavItem Icon={FaWaveSquare} selected={false} />
+      <NavItem Icon={FaFileAlt} selected={false} />
+      <NavItem Icon={FaArchive} selected={false} />
     </Wrapper>
   );
 };

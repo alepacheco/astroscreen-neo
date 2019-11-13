@@ -28,7 +28,8 @@ export const Row: React.FC<{
   socialNetwork: string;
   eventName: string;
   odd: boolean;
-}> = ({ socialNetwork, odd, eventName }) => {
+  level: number;
+}> = ({ socialNetwork, odd, eventName, level }) => {
   const [checked, setChecked] = useState(false);
 
   return (
@@ -39,7 +40,7 @@ export const Row: React.FC<{
       </SocialNetwork>
       <EventName>{eventName}</EventName>
       <TimeStamp>{socialNetwork}</TimeStamp>
-      <Risk>{socialNetwork}</Risk>
+      <Risk level={level}>{socialNetwork}</Risk>
       <Geography>{socialNetwork}</Geography>
       <Action>{socialNetwork}</Action>
     </RowWrapper>
