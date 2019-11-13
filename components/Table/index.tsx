@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Row } from './Row';
 import { Header } from './Header';
-import { data } from './data';
+import axios from 'axios';
 
 const Wrapper = styled.div``;
 
@@ -12,6 +12,12 @@ const List = styled.div`
 `;
 
 export const Table = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    axios.get('/api/data').then(({ data }: any) => setData(data));
+  }, []);
+
   const rowElements = data.map((rowData, index) => {
     return <Row key={index} odd={index % 2 === 1} {...rowData} />;
   });

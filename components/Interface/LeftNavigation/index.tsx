@@ -7,6 +7,7 @@ import { FaRegStar } from 'react-icons/fa';
 const Wrapper = styled.div`
   height: 100%;
   width: 80px;
+  min-width: 80px;
   background-color: rgb(31, 44, 73);
   border-top: 1.5px solid rgb(6, 22, 54);
   display: flex;

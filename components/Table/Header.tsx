@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import { ColumnEntry } from './ColumnEntry';
@@ -22,9 +22,10 @@ const HeaderWrapper = styled.div`
 `;
 
 export const Header = () => {
+  const [checked, setChecked] = useState(false);
   return (
     <HeaderWrapper>
-      <CheckBox />
+      <CheckBox checked={checked} onClick={() => setChecked(!checked)} />
       <ColumnEntry Icon={FaSearch}>Find in view</ColumnEntry>
       <ColumnEntry Icon={FaCompressArrowsAlt}>Filter</ColumnEntry>
       <ColumnEntry Icon={FaFolderPlus}>Group</ColumnEntry>

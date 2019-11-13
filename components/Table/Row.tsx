@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { CheckBox } from './CheckBox';
 import { SocialNetwork } from './RowColumns/SocialNetwork';
+import { EventName } from './RowColumns/EventName';
+import { TimeStamp } from './RowColumns/TimeStamp';
+import { Risk } from './RowColumns/Risk';
+import { Geography } from './RowColumns/Geography';
+import { Action } from './RowColumns/Action';
+import { FaRedditSquare } from 'react-icons/fa';
 
 const RowWrapper = styled.div<{ odd: boolean }>`
   background-color: ${({ odd }) =>
@@ -13,15 +19,29 @@ const RowWrapper = styled.div<{ odd: boolean }>`
   flex-direction: row;
 `;
 
+// @ts-ignore
+const mapToIcon = (socialNetwork: string) => {
+  return FaRedditSquare;
+};
+
 export const Row: React.FC<{
   socialNetwork: string;
-  Icon?: any;
+  eventName: string;
   odd: boolean;
-}> = ({ socialNetwork, Icon, odd }) => {
+}> = ({ socialNetwork, odd, eventName }) => {
+  const [checked, setChecked] = useState(false);
+
   return (
     <RowWrapper odd={odd}>
-      <CheckBox />
-      <SocialNetwork Icon={Icon}>{socialNetwork}</SocialNetwork>
+      <CheckBox checked={checked} onClick={() => setChecked(!checked)} />
+      <SocialNetwork Icon={mapToIcon(socialNetwork)}>
+        {socialNetwork}
+      </SocialNetwork>
+      <EventName>{eventName}</EventName>
+      <TimeStamp>{socialNetwork}</TimeStamp>
+      <Risk>{socialNetwork}</Risk>
+      <Geography>{socialNetwork}</Geography>
+      <Action>{socialNetwork}</Action>
     </RowWrapper>
   );
 };
