@@ -1,20 +1,9 @@
-# Landing page template
+# Test project 
 
-Starting template with:
-- React.js
-- Next.js
-- Typescript
-- SCSS
-- Google analytics
-- SSL (via Zeit Now)
-- CI
-- CD
-- Jest tests
+Added integration with api to download table data
+Navigation is done with redux using https://github.com/ctrlplusb/easy-peasy
 
-## How to use
+To note:
+- No tests
+- Router could be improved
 
-```javascript
-npm i -g now
-npm i
-npm run dev
-```
